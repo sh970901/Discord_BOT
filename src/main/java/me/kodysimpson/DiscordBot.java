@@ -17,8 +17,8 @@ import java.util.List;
 public class DiscordBot {
     public static void main(String[] args) throws LoginException, InterruptedException, SQLException {
 
-        JDA bot = JDABuilder.createDefault("Token")
-                .setActivity(Activity.playing("making...."))
+        JDA bot = JDABuilder.createDefault("token")
+                .setActivity(Activity.playing("위키 작성 중..."))
                 .build();
         bot.addEventListener(new HelloEvent());
         bot.awaitReady();
@@ -28,9 +28,9 @@ public class DiscordBot {
 
     }
 
-    public void onEvent(GenericEvent event)
-    {
-        if (event instanceof ReadyEvent)
-            System.out.println("API is ready!");
-    }
+//    public void onEvent(GenericEvent event)
+//    {
+//        if (event instanceof ReadyEvent)
+//            System.out.println("API is ready!");
+//    }
 }
