@@ -10,7 +10,6 @@ import net.dv8tion.jda.api.sharding.DefaultShardManagerBuilder;
 import net.dv8tion.jda.api.sharding.ShardManager;
 
 public class DSBot {
-
     private final Dotenv config;
     private final ShardManager shardManager;
 
@@ -26,7 +25,6 @@ public class DSBot {
 
         shardManager.addEventListener(new EventListener());
     }
-
     public Dotenv getConfig() {
         return config;
     }
@@ -43,5 +41,4 @@ public class DSBot {
             System.out.println("ERROR! Token is Invalid");
         }
     }
-
 }
