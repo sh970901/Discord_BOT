@@ -41,7 +41,7 @@ public class EventListener extends ListenerAdapter {
             Message msg = event.getMessage();
             if (msg.getContentRaw().equals("!위키")) {
                 if(studentMap.size() == 0){
-                    event.getChannel().sendMessage("오늘은 위키쓰는 날이 아니에요!").queue();
+//                    event.getChannel().sendMessage("오늘은 위키쓰는 날이 아니에요!").queue();
                     return;
                 }
                 sb.append("오늘 위키 작성 부탁드립니다!\uD83D\uDE42\n");
@@ -53,7 +53,6 @@ public class EventListener extends ListenerAdapter {
         }
         sb.setLength(0);
     }
-
     private void input() {
         int month = LocalDate.now().getMonthValue();
         int day = LocalDate.now().getDayOfMonth();
@@ -65,7 +64,7 @@ public class EventListener extends ListenerAdapter {
             connection = DriverManager.getConnection(url, username, password);
             statement = connection.createStatement();
             resultSet = statement.executeQuery(
-                    "select id,class from class where month =" + month + " AND  day = " + day);
+                    "select id,class from classes where month =" + month + " AND  day = " + day);
             while (resultSet.next()) {
                 studentMap.put(resultSet.getString(1), resultSet.getInt(2));
             }
